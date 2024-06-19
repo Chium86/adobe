@@ -7,7 +7,9 @@
     margin-top: -117px;
 }
 
-
+.nav-active{
+    background-color: rgba(0,0,0,.7);
+}
 
 .nav-btn{
     background-color: white;
@@ -30,7 +32,7 @@
 }
 
 
-/* artical--------------------------*/
+/* article--------------------------*/
 
 .article{
     max-width:950PX;
@@ -118,4 +120,31 @@
 
 .hover-zoom-in:hover .fas{
     transform: scale(1);
+}
+
+@media screen and (max-width: 1024px) {
+    .article{
+        width: 80%;
+    }    
+}
+
+@media screen and (max-width: 480px) {
+    .article{
+        width: auto;
+        padding: 4rem 2rem 2rem;
+    }
+    
+    .nav{
+        top:0;
+        left: 0;
+        margin-top: 0;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        z-index: 10; /*內容多才不會蓋住nav*/
+    }
+
+    .article-head{
+        text-align: center;
+    }
 }
