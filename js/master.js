@@ -1,25 +1,27 @@
 const isMobile = $(window).width() <= 480;  //抓出可視範圍寬度,並判斷是否<=480
 // console.log(isMobile) 
+const $grid = $('#Grid');
+const $nav = $('#Nav');
 
 function setGrid(){
     if (isMobile){
-        $('#Grid').addClass('grid-2');
+        $grid.addClass('grid-2');
         return;
     }
-    $('#Grid').addClass('grid-3');
+        $grid.addClass('grid-3');
 }
 
 setGrid(); //呼叫
 
 
-$(window).scroll(function(){
+$(window).scroll(function() {
+
+    if (!isMobile) return;
     // console.log($(window).scrollTop());
     if($(window).scrollTop() == 0){
-        $('#Nav').removeClass('nav-active')
+        $nav.removeClass('nav-active');
     }else{
-        $('#Nav').addClass('nav-active')
-        
+        $nav.addClass('nav-active');
     }
-
-
+    
 });
