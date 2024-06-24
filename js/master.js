@@ -11,17 +11,36 @@ function setGrid(){
         $grid.addClass('grid-3');
 }
 
-setGrid(); //呼叫
-
-
-$(window).scroll(function() {
-
+function setScroll(){
+    $(window).scroll(function() {
+    // isMobile = true
+    // !isMobile = false
     if (!isMobile) return;
+    
     // console.log($(window).scrollTop());
     if($(window).scrollTop() == 0){
         $nav.removeClass('nav-active');
     }else{
         $nav.addClass('nav-active');
-    }
-    
+    }    
 });
+}
+
+function setInit(){
+    setGrid(); //呼叫
+}
+
+function setEvent(){
+    setScroll();
+    setFancybox();
+}
+
+function setFancybox(){
+    $grid.find('a').fancybox({
+        protect:true,
+        loop:true,
+    });
+}
+
+setInit();
+setEvent();
